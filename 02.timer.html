@@ -1,0 +1,113 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="timer_style.css">
+</head>
+<body>
+<!--    計測中-->
+<div id="timing">
+    <div class="timer_div">
+        <div class="timing_h_wrapper">
+            <h2>今日の学習時間は：</h2>
+        </div>
+        <div class="timer_wrapper">
+            <span id="hour"></span>
+            <span id="min"></span>
+            <span id="sec"></span>
+        </div>
+        <div id="btns_wrapper">
+                <div class="btn">
+                    <label id="rest" style="display:block" >ちょこっとひと休み</label>
+                    <label id="restart" style="display:none">学習再開</label>
+                </div>
+
+                <div class="btn" >
+                    <label id="fin">終了</label>
+                </div>
+
+        </div>
+                <div id="fin_msg" style="display: none">
+                    <h2>でした！</h2>
+                    <h2>お疲れ様でした！</h2>
+                </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script>
+     var hour = document.getElementById('hour')
+     var min = document.getElementById('min')
+     var sec = document.getElementById('sec')
+
+     var secnum = 0
+     var minnum = 0
+     var hournum = 0
+
+     hour.innerHTML = hournum+"時間"
+     min.innerHTML = minnum + "分"
+     sec.innerHTML = secnum + "秒"
+
+     var isRunning = null
+
+     function start(){
+         if (isRunning==null){
+        isRunning = setInterval(function () {
+             secnum++
+             if (secnum <= 59 && minnum <= 59) {
+                 sec.innerHTML = secnum +"秒"
+
+             }else if (minnum <= 58){
+                 minnum++
+                 secnum = 0
+                 min.innerHTML =　minnum+"分"
+                 sec.innerHTML = secnum +"秒"
+             }else {
+                 hournum++
+                 secnum = 0
+                 minnum = 0
+                 hour.innerHTML = hournum + "時間"
+                 min.innerHTML =　minnum+"分"
+                 sec.innerHTML = secnum +"秒"
+             }
+         },1000)}
+     }
+     start()
+
+
+
+     //ボタン操作
+     var rest = document.getElementById('rest')
+     var restart =document.getElementById('restart')
+     var fin = document.getElementById('fin')
+     var btns = document.getElementById('btns_wrapper')
+     var fin_msg = document.getElementById('fin_msg')
+
+     rest.onclick = function () {
+         stopTimer()
+         this.style.display = this.style.display === "none"? "block":"none"
+         restart.style.display = restart.style.display === "none"? "block":"none"
+     }
+
+     restart.onclick = function () {
+         start()
+         this.style.display = this.style.display === "none"? "block":"none"
+         rest.style.display = rest.style.display === "none"? "block":"none"
+     }
+
+     fin.onclick = function () {
+         stopTimer()
+         btns.style.display = "none"
+         fin_msg.style.display = "block"
+
+     }
+
+     function stopTimer(){
+         clearInterval(isRunning)
+         isRunning = null
+     }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    /*font-family: ;*/
+    background-image: url("./study.jpg");
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+
+    background-position: 50% 50%;
+
+}
+a{
+    text-decoration: none;
+}
+
+@media screen and (max-width:600px){
+    html {
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 8px;
+        background-position: 50% 50%;
+    }
+}

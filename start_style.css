@@ -1,0 +1,47 @@
+@charset "utf-8";
+.start_div {
+    margin: 0 auto;
+    width: 50%;
+    height:500px ;
+    text-align: center;
+
+}
+
+.start_h_wrapper h2 {
+    line-height: 250px;
+}
+
+.start_btn_wrapper .start_btn {
+    height: 100px;
+}
+
+.start_btn_wrapper .start_btn a{
+    display: block;
+    font-size: 30px;
+    color: white;
+    line-height: 90px;
+    margin: 20px auto;
+    width: 250px;
+    border: 5px solid brown;
+    border-radius: 30px;
+    background-image: url("./wood.jpg");
+}
+
+@media screen and (max-width: 600px) {
+    .start_btn_wrapper .start_btn {
+        height: 50px;
+    }
+    .start_btn_wrapper .start_btn a{
+        display: block;
+        font-size: 10px;
+        color: white;
+        line-height: 46px;
+        margin: 20px auto;
+        width: 125px;
+        border: 2px solid brown;
+        border-radius: 15px;
+        /*background-image: url("./wood.jpg");*/
+    }
+}
+
+

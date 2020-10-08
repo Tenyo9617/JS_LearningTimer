@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+.timer_div{
+    margin: 0 auto;
+    width: 50%;
+    height:500px ;
+    text-align: center;
+}
+
+.timer_div .timing_h_wrapper,
+.timer_div .timer_wrapper,
+.timer_div .btns_wrapper{
+    height: 166.6px;
+
+}
+
+.timer_div .timing_h_wrapper h2{
+    line-height: 166.6px;
+    font-size: 30px;
+}
+
+.timer_div .timer_wrapper span{
+    line-height: 166.6px;
+    font-size: 50px;
+}
+
+.timer_div #btns_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.timer_div #btns_wrapper .btn {
+    line-height: 166.6px;
+    height: 100px;
+    font-size: 20px;
+    color: white;
+    margin: 33px auto;
+    width: 250px;
+    border: 5px solid brown;
+    border-radius: 30px;
+    background-image: url("./wood.jpg");
+  }
+
+.timer_div #btns_wrapper .btn *:hover{
+    cursor: pointer;
+}
+
+.timer_div #btns_wrapper .btn label {
+    display: block;
+    line-height: 90px;
+}
+
+
+
+@media screen and (min-width: 540px) and (max-width:785px){
+
+    .timer_div .timer_wrapper span{
+        line-height: 166.6px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .timer_div #btns_wrapper .btn{
+        line-height: 166.6px;
+        height: 50px;
+        font-size: 20px;
+        color: white;
+        margin: 20px auto;
+        width: 125px;
+        border: 2px solid brown;
+        border-radius: 15px;
+    }
+    .timer_div #btns_wrapper .btn{
+        font-size: 10px;
+    }
+    .timer_div #btns_wrapper .btn label {
+        line-height: 45px;
+    }
+
+}
+@media screen and (max-width: 539px){
+    .timer_div .timing_h_wrapper h2{
+        font-size: 15px;
+    }
+    .timer_div .timer_wrapper span{
+        line-height: 166.6px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .timer_div #btns_wrapper .btn{
+        line-height: 166.6px;
+        height: 50px;
+        font-size: 20px;
+        color: white;
+        margin: 20px auto;
+        width: 125px;
+        border: 2px solid brown;
+        border-radius: 15px;
+    }
+    .timer_div #btns_wrapper .btn{
+        font-size: 10px;
+    }
+    .timer_div #btns_wrapper .btn label {
+        line-height: 45px;
+    }
+}
+
